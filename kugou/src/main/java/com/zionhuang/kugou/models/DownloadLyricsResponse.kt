@@ -1,0 +1,8 @@
+package com.doney_dkp.kugou.models
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class DownloadLyricsResponse(
+    val content: String,
+)

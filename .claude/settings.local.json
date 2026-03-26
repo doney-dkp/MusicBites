@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(keytool -genkeypair -keystore /home/doney/github/MusicBites/musicbites-release.jks -alias release -keyalg RSA -keysize 2048 -validity 10000 -storepass musicbites123 -keypass musicbites123 -dname \"CN=MusicBites, OU=Dev, O=DKP, L=Unknown, ST=Unknown, C=US\")",
+      "Bash(wsl -d Ubuntu-22.04 -- keytool -genkeypair -keystore /home/doney/github/MusicBites/musicbites-release.jks -alias release -keyalg RSA -keysize 2048 -validity 10000 -storepass musicbites123 -keypass musicbites123 -dname \"CN=MusicBites, OU=Dev, O=DKP, L=Unknown, ST=Unknown, C=US\")",
+      "Bash(wsl -d Ubuntu-22.04 -- bash -c 'keytool -genkeypair -keystore /home/doney/github/MusicBites/musicbites-release.jks -alias release -keyalg RSA -keysize 2048 -validity 10000 -storepass musicbites123 -keypass musicbites123 -dname \"\"CN=MusicBites, OU=Dev, O=DKP, L=Unknown, ST=Unknown, C=US\"\" 2>&1')",
+      "Bash(wsl -d Ubuntu-22.04 -- ls -la /home/doney/github/MusicBites/musicbites-release.jks)",
+      "Bash(ls *.jks)",
+      "Bash(ls *.keystore)",
+      "Bash(set MUSIC_RELEASE_KEYSTORE_FILE=/home/doney/github/MusicBites/musicbites-release.jks)",
+      "Bash(set MUSIC_RELEASE_SIGNING_STORE_PASSWORD=musicbites123)",
+      "Bash(set MUSIC_RELEASE_KEY_ALIAS=release)",
+      "Bash(set MUSIC_RELEASE_SIGNING_KEY_PASSWORD=musicbites123)",
+      "Bash(./gradlew assembleRelease)",
+      "Bash(wsl -d Ubuntu-22.04 -- bash -c 'cd /home/doney/github/MusicBites && MUSIC_RELEASE_KEYSTORE_FILE=/home/doney/github/MusicBites/musicbites-release.jks MUSIC_RELEASE_SIGNING_STORE_PASSWORD=musicbites123 MUSIC_RELEASE_KEY_ALIAS=release MUSIC_RELEASE_SIGNING_KEY_PASSWORD=musicbites123 ./gradlew assembleRelease 2>&1')",
+      "Bash(wsl -d Ubuntu-22.04 -- bash -c 'apt list --installed 2>/dev/null | grep -i jdk | head -20')",
+      "Bash(wsl -d Ubuntu-22.04 -- bash -c 'sudo apt-get install -y openjdk-17-jdk 2>&1')",
+      "Bash(wsl.exe -d Ubuntu-22.04 -- java -version)",
+      "Bash(echo \"JAVA_HOME=$JAVA_HOME\")"
+    ]
+  }
+}
